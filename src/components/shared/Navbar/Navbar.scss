@@ -1,0 +1,91 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 5%;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+
+    .nav-logo .logo-container {
+      height: 40px; 
+      width: 120px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .inner-nav-link {
+      color: var(--main-color);
+      font-size: 0.95rem;
+      font-weight: 500;
+      position: relative;
+      text-decoration: none;
+      padding: 1rem 0;
+
+      &:hover,
+      &.active {
+        color: var(--main-color);
+
+        .line {
+          width: 100%;
+        }
+      }
+
+      .line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: var(--main-color);
+        transition: width 0.3s ease;
+      }
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}
+
+.nav__sticky {
+  background: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px;
+
+  .inner-nav-link {
+    color: #111;
+  }
+
+  .inner-nav-link.active {
+    color: var(--main-color); // highlight current page
+  }
+}
+
+
+@media (max-width: 1020px) {
+  .nav {
+    padding: 0.5rem 1rem;
+
+    .nav-links,
+    .nav-auth {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: block;
+    }
+  }
+}

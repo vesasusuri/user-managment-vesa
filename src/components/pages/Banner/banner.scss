@@ -1,0 +1,122 @@
+.home-page {
+  overflow: hidden;
+}
+
+.banner {
+  position: relative;
+  padding: 11% 7.5% 10%;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* background as a pseudo-element so it clips separately */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../../assets/home/banner1.webp") center/cover no-repeat;
+    background-attachment: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 69%, 0 98%);
+    z-index: 1;
+  }
+
+  .info {
+    width: 45%;
+    margin: 0 auto;
+    z-index: 3;
+    text-align: left;
+    position: relative;
+  }
+
+  h1, p {
+    position: relative;
+    color: #fff;
+    z-index: 3;
+  }
+
+  .links {
+    display: flex;
+    width: 50%;
+    margin-left: -20px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .inner-banner-photo {
+    content: url("../../../assets/home/inside-banner.png");
+    width: 45%;
+    margin-top: -40px;
+    position: relative;
+    z-index: 4;
+  }
+}
+
+
+/* Buttons */
+.button2 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-top: 20px;
+  border-radius: max(25px, 2vw);
+  font-size: max(14px, 0.85vw);
+  color: #17214f;
+  text-align: center;
+  transition: 0.325s ease-in-out;
+  text-decoration: none;
+  font-weight: 600;
+  .iconPhone {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #17214f;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .banner {
+    padding: 135px 5% 100px;
+    margin-bottom: 35px;
+    background-attachment: unset;
+
+    .info {
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .inner-banner-photo {
+      width: 45%;
+      margin-top: 20px;
+    }
+
+    .links {
+      justify-content: center;
+      margin-left: 0;
+      width: 60%;
+    }
+  }
+
+  .button2 {
+    margin-left: 0;
+  }
+}
+
+/* Optional animation (not used currently) */
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
