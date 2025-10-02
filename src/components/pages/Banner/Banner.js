@@ -14,7 +14,7 @@ const Banner = () => {
        <h1>
           <FormattedMessage
             id="home-banner-title"
-            defaultMessage="UManage "
+            defaultMessage="UManage"
           />
         </h1>
         <p>
@@ -30,9 +30,6 @@ const Banner = () => {
           </Link>
         </p>
       </div>
-      <div className="inner-banner-photo" 
-        data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"></div>
     </div>
   );
 };

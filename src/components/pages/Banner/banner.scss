@@ -11,7 +11,6 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  /* background as a pseudo-element so it clips separately */
   &::before {
     content: "";
     position: absolute;
@@ -29,11 +28,17 @@
     width: 45%;
     margin: 0 auto;
     z-index: 3;
-    text-align: left;
+    text-align: center;
     position: relative;
   }
 
-  h1, p {
+  h1{
+    position: relative;
+    color: #fff;
+    z-index: 3;
+    font-size: 50px;
+  }
+  p{
     position: relative;
     color: #fff;
     z-index: 3;
@@ -47,25 +52,14 @@
     z-index: 3;
   }
 
-  .inner-banner-photo {
-    content: url("../../../assets/home/inside-banner.png");
-    width: 45%;
-    margin-top: -40px;
-    position: relative;
-    z-index: 4;
-  }
-}
-
-
-/* Buttons */
 .button2 {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   padding-top: 20px;
   border-radius: max(25px, 2vw);
   font-size: max(14px, 0.85vw);
-  color: #17214f;
+  color: white;
   text-align: center;
   transition: 0.325s ease-in-out;
   text-decoration: none;
@@ -73,11 +67,11 @@
   .iconPhone {
     font-size: 20px;
     margin-right: 10px;
-    color: #17214f;
+    color: white;
   }
 }
+}
 
-/* Responsive adjustments */
 @media (max-width: 1100px) {
   .banner {
     padding: 135px 5% 100px;
@@ -111,12 +105,5 @@
 
   .button2 {
     margin-left: 0;
-  }
-}
-
-/* Optional animation (not used currently) */
-@keyframes textclip {
-  to {
-    background-position: 200% center;
   }
 }

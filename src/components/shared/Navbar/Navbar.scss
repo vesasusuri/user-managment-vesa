@@ -14,11 +14,14 @@
     display: flex;
     align-items: center;
 
-    .nav-logo .logo-container {
-      height: 40px; 
+   .nav-logo .logo-container {
       width: 120px;
+      height: auto;
+     content: url("../../../assets/nav/logo1.png"); 
       background-size: contain;
       background-repeat: no-repeat;
+      background-position: center;
+      transition: background-image 0.3s ease;
     }
   }
 
@@ -70,7 +73,10 @@
   }
 
   .inner-nav-link.active {
-    color: var(--main-color); // highlight current page
+    color: var(--main-color); 
+  }
+  .nav-left .logo-container {
+    background-image: url("../../../assets/nav/logo2.png"); 
   }
 }
 
