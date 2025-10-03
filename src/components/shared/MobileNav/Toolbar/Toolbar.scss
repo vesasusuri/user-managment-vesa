@@ -15,7 +15,6 @@
         display: flex;
         align-items: center;
         .mobile-logo-container{
-            // content: url('../../../../assets/flags/albania.svg');
             height: max(50px, 3.5vw);
         }
     }
@@ -35,11 +34,6 @@
     box-shadow: rgba(99, 99, 99, 0.15) 0px 1.5px 2.5px 0px;
     transition: 0.2s ease;
     -webkit-transition: 0.2s ease;
-    .mobile-logo-row a{
-        .mobile-logo-container{
-            // content: url('../../../../assets/nav/logo2.png')!important;
-        }
-    }
     button{
         color:#31335b !important;
     }

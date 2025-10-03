@@ -26,7 +26,7 @@ const Banner = () => {
         <p>
           <Link className="button2">
             <BsTelephoneFill className="iconPhone"/>
-            <FormattedMessage id="contact" defaultMessage="Contact Us" />
+            <FormattedMessage id="Contact-Us" defaultMessage="Contact Us" />
           </Link>
         </p>
       </div>

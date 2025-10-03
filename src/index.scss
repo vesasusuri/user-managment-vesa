@@ -6,8 +6,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-h1,h2,h3,h4,h5,h6,a,p,span,button, link,tr,td,th{
+h1,h2,h3,h4,h5,h6,a,p,span,button, link,tr,td,th, label{
     font-family: "Alan Sans", sans-serif;
+}
+
+a,link{
+  text-decoration: none;
 }

@@ -35,7 +35,7 @@ const Navbar = ({ styles }) => {
         </Link>
 
         <Link
-          to="/contact"
+          to="/"
           className={`inner-nav-link contact ${location.pathname === "/contact" ? "active" : ""}`}
         >
           <FormattedMessage id="Contact-Us" defaultMessage="Contact Us" />

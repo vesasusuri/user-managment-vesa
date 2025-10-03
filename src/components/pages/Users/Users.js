@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./UsersTable.scss";
 import { IoPersonSharp } from "react-icons/io5";
+import { FormattedMessage } from "react-intl";
 
 function UsersTable() {
   const [users, setUsers] = useState([]);
@@ -81,9 +82,22 @@ function UsersTable() {
 
   return (
     <div className="users-table-container">
+       <div
+        className="info"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+      >
       <div className="header-section">
-        <h2>Users List</h2>
-        <button className="add-new-user" onClick={() => setShowAddModal(true)}>Add New User</button>
+        <h2><FormattedMessage
+            id="Users-List"
+            defaultMessage="Users List"
+          /></h2>
+        <button className="add-new-user" onClick={() => setShowAddModal(true)}>
+          <FormattedMessage
+            id="Add-New-User"
+            defaultMessage="Add New User"
+          />
+          </button>
       </div>
 
       <div className="search-bar">
@@ -99,11 +113,22 @@ function UsersTable() {
         <table className="users-table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Company</th>
-              <th>Actions</th>
+              <th>
+                <FormattedMessage
+                  id="ID"
+                  defaultMessage="ID"/></th>
+              <th><FormattedMessage
+                  id="Name"
+                  defaultMessage="Name"/></th>
+              <th><FormattedMessage
+                  id="Email"
+                  defaultMessage="Email"/></th>
+              <th><FormattedMessage
+                  id="Company"
+                  defaultMessage="Company"/></th>
+              <th><FormattedMessage
+                  id="Actions"
+                  defaultMessage="Actions"/></th>
             </tr>
           </thead>
           <tbody>
@@ -114,8 +139,10 @@ function UsersTable() {
                 <td>{user.email}</td>
                 <td>{user.company?.name || "-"}</td>
                 <td>
-                  <button className="update-btn" onClick={() => handleUpdate(user)}>Update</button>
-                  <button className="delete-btn" onClick={() => handleDelete(user.id)}>Delete</button>
+                  <button className="update-btn" onClick={() => handleUpdate(user)}>
+                  <FormattedMessage id="Update" defaultMessage="Update"/></button>
+                  <button className="delete-btn" onClick={() => handleDelete(user.id)}>
+                  <FormattedMessage id="Delete" defaultMessage="Delete"/></button>
                   <button className="details-btn" onClick={() => navigate(`/users/${user.id}`)}><IoPersonSharp /></button>
                 </td>
               </tr>
@@ -132,41 +159,40 @@ function UsersTable() {
         ))}
       </div>
 
-      {/* Update Modal */}
       {editingUser && (
         <div className="modal-overlay">
           <div className="modal">
-            <h3>Edit User</h3>
-            <label>Name:<input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} /></label>
-            <label>Email:<input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} /></label>
-            <label>Phone:<input type="text" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} /></label>
-            <label>City:<input type="text" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} /></label>
+            <h3><FormattedMessage id="Edit-User" defaultMessage="Edit User"/></h3>
+            <label><FormattedMessage id="Name:" defaultMessage="Name:"/><input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} /></label>
+            <label><FormattedMessage id="Email:" defaultMessage="Email:"/><input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} /></label>
+            <label><FormattedMessage id="Phone:" defaultMessage="Phone:"/><input type="text" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} /></label>
+            <label><FormattedMessage id="City:" defaultMessage="City:"/><input type="text" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} /></label>
             <div className="modal-buttons">
-              <button onClick={handleSave}>Save</button>
-              <button onClick={() => setEditingUser(null)}>Cancel</button>
+              <button onClick={handleSave}><FormattedMessage id="Save" defaultMessage="Save"/></button>
+              <button onClick={() => setEditingUser(null)}><FormattedMessage id="Cancel" defaultMessage="Cancel"/></button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Add User Modal */}
       {showAddModal && (
         <div className="modal-overlay">
           <div className="modal">
-            <h3>Add New User</h3>
+            <h3><FormattedMessage id="Add-New-User" defaultMessage="Add New User"/></h3>
             <form onSubmit={handleAddUser}>
-              <label>Name:*<input type="text" value={addFormData.name} onChange={(e) => setAddFormData({ ...addFormData, name: e.target.value })} /></label>
-              <label>Email:*<input type="email" value={addFormData.email} onChange={(e) => setAddFormData({ ...addFormData, email: e.target.value })} /></label>
-              <label>Phone:<input type="text" value={addFormData.phone} onChange={(e) => setAddFormData({ ...addFormData, phone: e.target.value })} /></label>
-              <label>City:<input type="text" value={addFormData.city} onChange={(e) => setAddFormData({ ...addFormData, city: e.target.value })} /></label>
+              <label><FormattedMessage id="Name:*" defaultMessage="Name:*"/><input type="text" value={addFormData.name} onChange={(e) => setAddFormData({ ...addFormData, name: e.target.value })} /></label>
+              <label><FormattedMessage id="Email:*" defaultMessage="Email:*"/><input type="email" value={addFormData.email} onChange={(e) => setAddFormData({ ...addFormData, email: e.target.value })} /></label>
+              <label><FormattedMessage id="Phone:" defaultMessage="Phone:"/><input type="text" value={addFormData.phone} onChange={(e) => setAddFormData({ ...addFormData, phone: e.target.value })} /></label>
+              <label><FormattedMessage id="City:" defaultMessage="City:"/><input type="text" value={addFormData.city} onChange={(e) => setAddFormData({ ...addFormData, city: e.target.value })} /></label>
               <div className="modal-buttons">
-                <button type="submit">Add</button>
-                <button type="button" onClick={() => setShowAddModal(false)}>Cancel</button>
+                <button type="submit"><FormattedMessage id="Add" defaultMessage="Add"/></button>
+                <button type="button" onClick={() => setShowAddModal(false)}><FormattedMessage id="Cancel" defaultMessage="Cancel"/></button>
               </div>
             </form>
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }

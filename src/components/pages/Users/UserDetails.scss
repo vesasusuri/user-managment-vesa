@@ -1,0 +1,36 @@
+.user-details-page {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.user-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.user-name {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.user-info p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #007bff;
+  text-decoration: none;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
